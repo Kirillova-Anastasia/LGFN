@@ -27,7 +27,9 @@ def main():
         t.test()
     else:
         if checkpoint.ok:
+            print('_________________________before loader____________________')
             loader = data.Data(args)
+            print('_________________________after loader____________________')
             _model = model.Model(args, checkpoint)
             
             print('----------------------------------------------')

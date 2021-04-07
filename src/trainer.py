@@ -95,15 +95,18 @@ class Trainer():
                     sr = utility.quantize(sr, self.args.rgb_range)
 
                     save_list = [sr]
+                    '''
                     self.ckp.log[-1, idx_data, idx_scale] += utility.calc_psnr(
                         sr, hr, scale, self.args.rgb_range, dataset=d
                     )
+                    '''
                     if self.args.save_gt:
                         save_list.extend([lr, hr])
 
                     if self.args.save_results:
                         self.ckp.save_results(d, filename[0], save_list)
 
+                '''
                 self.ckp.log[-1, idx_data, idx_scale] /= len(d)
                 best = self.ckp.log.max(0)
                 self.ckp.write_log(
@@ -115,6 +118,7 @@ class Trainer():
                         best[1][idx_data, idx_scale] + 1
                     )
                 )
+                '''
 
                 if not self.args.test_only:
                     writer = SummaryWriter(self.args.tensorboard)
