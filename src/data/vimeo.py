@@ -26,12 +26,12 @@ class Vimeo(data.Dataset):
             self.apath = os.path.join(dir_data, 'vimeo_super_resolution_train')
             self.dir_hr = os.path.join(self.apath, 'HR')
             self.dir_lr = os.path.join(self.apath, 'bicubic_LR')
-            self.train_pathlist = self.loadpath(os.path.join(self.apath, 'sep_trainlist.txt'))
+            # self.train_pathlist = self.loadpath(os.path.join(self.apath, 'sep_trainlist.txt'))
         else:
             self.apath = os.path.join(dir_data, 'vimeo_super_resolution_test')
             self.dir_hr = os.path.join(self.apath, 'HR')
             self.dir_lr = os.path.join(self.apath, 'bicubic_LR')
-            self.test_pathlist = self.loadpath(os.path.join(self.apath, 'fast_testlist.txt'))
+            # self.test_pathlist = self.loadpath(os.path.join(self.apath, 'fast_testlist.txt'))
             
     def __getitem__(self, idx):
         if self.train:

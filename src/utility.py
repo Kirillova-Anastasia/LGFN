@@ -72,8 +72,8 @@ class checkpoint():
         for d in args.data_test:
             os.makedirs(self.get_path('results-{}'.format(d)), exist_ok=True)
 
-        open_type = 'a' if os.path.exists(self.get_path('log.txt')) else 'w'
-        self.log_file = open(self.get_path('log.txt'), open_type)
+        # open_type = 'a' if os.path.exists(self.get_path('log.txt')) else 'w'
+        # self.log_file = open(self.get_path('log.txt'), open_type)
         #with open(self.get_path('config.txt'), open_type) as f:
         #    f.write(now + '\n\n')
             # for arg in vars(args):
@@ -105,7 +105,8 @@ class checkpoint():
     #         self.log_file = open(self.get_path('log.txt'), 'a')
 
     def done(self):
-        self.log_file.close()
+        print()
+    #     self.log_file.close()
 
     def plot_psnr(self, epoch):
         axis = np.linspace(1, epoch, epoch)
