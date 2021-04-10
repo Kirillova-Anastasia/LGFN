@@ -33,9 +33,9 @@ class Trainer():
         epoch = self.optimizer.get_last_epoch() + 1
         lr = self.optimizer.get_lr()
 
-        self.ckp.write_log(
-            '[Epoch {}]\tLearning rate: {:.2e}'.format(epoch, Decimal(lr))
-        )
+        # self.ckp.write_log(
+        #     '[Epoch {}]\tLearning rate: {:.2e}'.format(epoch, Decimal(lr))
+        # )
         self.loss.start_log()
         self.model.train()
 
@@ -61,12 +61,12 @@ class Trainer():
             timer_model.hold()
 
             if (batch + 1) % self.args.print_every == 0:
-                self.ckp.write_log('[{}/{}]\t{}\t{:.1f}+{:.1f}s'.format(
-                    (batch + 1) * self.args.batch_size,
-                    len(self.loader_train.dataset),
-                    self.loss.display_loss(batch),
-                    timer_model.release(),
-                    timer_data.release()))
+                # self.ckp.write_log('[{}/{}]\t{}\t{:.1f}+{:.1f}s'.format(
+                #     (batch + 1) * self.args.batch_size,
+                #     len(self.loader_train.dataset),
+                #     self.loss.display_loss(batch),
+                #     timer_model.release(),
+                #     timer_data.release()))
 
             timer_data.tic()
 
@@ -77,7 +77,7 @@ class Trainer():
         torch.set_grad_enabled(False)
 
         epoch = self.optimizer.get_last_epoch() + 1
-        self.ckp.write_log('\nEvaluation:')
+        #self.ckp.write_log('\nEvaluation:')
         self.ckp.add_log(
             torch.zeros(1, len(self.loader_test), len(self.scale))
         )
@@ -130,8 +130,8 @@ class Trainer():
                     writer.add_scalar('PSNR', self.ckp.log[-1, idx_data, idx_scale], epoch)
                     writer.close()
 
-        self.ckp.write_log('Forward: {:.2f}s\n'.format(timer_test.toc()))
-        self.ckp.write_log('Saving...')
+        #self.ckp.write_log('Forward: {:.2f}s\n'.format(timer_test.toc()))
+        #self.ckp.write_log('Saving...')
 
         if self.args.save_results:
             self.ckp.end_background()
@@ -139,9 +139,9 @@ class Trainer():
         if not self.args.test_only:
             self.ckp.save(self, epoch, is_best=(best[1][0, 0] + 1 == epoch))
 
-        self.ckp.write_log(
-            'Total: {:.2f}s\n'.format(timer_test.toc()), refresh=True
-        )
+        #self.ckp.write_log(
+        #    'Total: {:.2f}s\n'.format(timer_test.toc()), refresh=True
+        #)
 
         torch.set_grad_enabled(True)
 

@@ -74,11 +74,11 @@ class checkpoint():
 
         open_type = 'a' if os.path.exists(self.get_path('log.txt')) else 'w'
         self.log_file = open(self.get_path('log.txt'), open_type)
-        with open(self.get_path('config.txt'), open_type) as f:
-            f.write(now + '\n\n')
-            for arg in vars(args):
-                f.write('{}: {}\n'.format(arg, getattr(args, arg)))
-            f.write('\n')
+        #with open(self.get_path('config.txt'), open_type) as f:
+        #    f.write(now + '\n\n')
+            # for arg in vars(args):
+            #     f.write('{}: {}\n'.format(arg, getattr(args, arg)))
+            # f.write('\n')
 
         self.n_processes = 8
 
@@ -99,7 +99,7 @@ class checkpoint():
 
     def write_log(self, log, refresh=False):
         print(log)
-        self.log_file.write(log + '\n')
+        # self.log_file.write(log + '\n')
         if refresh:
             self.log_file.close()
             self.log_file = open(self.get_path('log.txt'), 'a')
