@@ -1,3 +1,5 @@
+git clone https://github.com/Kirillova-Anastasia/LGFN.git
+cd LGFN
 pip install tensorboard==1.11.0 tensorboardX==1.4
 cd src/Deform_Conv
 sh make.sh
