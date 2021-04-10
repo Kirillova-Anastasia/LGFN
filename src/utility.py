@@ -158,8 +158,8 @@ class checkpoint():
             )
             '''
             save_dir = self.args.save_dir
-            if not os.path.exists(save_dir):
-                os.mkdir(save_dir)
+            # if not os.path.exists(save_dir):
+            #     os.mkdir(save_dir)
             filename = self.get_path(save_dir, '{}'.format(filename))
             print(filename)
 
