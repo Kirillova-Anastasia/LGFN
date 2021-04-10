@@ -60,7 +60,7 @@ class Trainer():
 
             timer_model.hold()
 
-            if (batch + 1) % self.args.print_every == 0:
+            #if (batch + 1) % self.args.print_every == 0:
                 # self.ckp.write_log('[{}/{}]\t{}\t{:.1f}+{:.1f}s'.format(
                 #     (batch + 1) * self.args.batch_size,
                 #     len(self.loader_train.dataset),
