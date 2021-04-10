@@ -97,12 +97,12 @@ class checkpoint():
     def add_log(self, log):
         self.log = torch.cat([self.log, log])
 
-    def write_log(self, log, refresh=False):
-        print(log)
-        # self.log_file.write(log + '\n')
-        if refresh:
-            self.log_file.close()
-            self.log_file = open(self.get_path('log.txt'), 'a')
+    # def write_log(self, log, refresh=False):
+    #     print(log)
+    #     # self.log_file.write(log + '\n')
+    #     if refresh:
+    #         self.log_file.close()
+    #         self.log_file = open(self.get_path('log.txt'), 'a')
 
     def done(self):
         self.log_file.close()

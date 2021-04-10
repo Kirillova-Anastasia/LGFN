@@ -124,11 +124,11 @@ class Trainer():
                 )
                 '''
 
-                if not self.args.test_only:
-                    writer = SummaryWriter(self.args.tensorboard)
-                    writer.add_scalar('Loss', self.loss.log[-1, 0], epoch)
-                    writer.add_scalar('PSNR', self.ckp.log[-1, idx_data, idx_scale], epoch)
-                    writer.close()
+                # if not self.args.test_only:
+                #     writer = SummaryWriter(self.args.tensorboard)
+                #     writer.add_scalar('Loss', self.loss.log[-1, 0], epoch)
+                #     writer.add_scalar('PSNR', self.ckp.log[-1, idx_data, idx_scale], epoch)
+                #     writer.close()
 
         #self.ckp.write_log('Forward: {:.2f}s\n'.format(timer_test.toc()))
         #self.ckp.write_log('Saving...')
