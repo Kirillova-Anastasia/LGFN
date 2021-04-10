@@ -54,9 +54,9 @@ class checkpoint():
         if not args.load:
             if not args.save:
                 args.save = now
-            self.dir = os.path.join('..', 'experiment', args.save)
+            self.dir = os.path.join('experiment', args.save)
         else:
-            self.dir = os.path.join('..', 'experiment', args.load)
+            self.dir = os.path.join('experiment', args.load)
             if os.path.exists(self.dir):
                 self.log = torch.load(self.get_path('psnr_log.pt'))
                 print('Continue from epoch {}...'.format(len(self.log)))
@@ -67,8 +67,8 @@ class checkpoint():
             os.system('rm -rf ' + self.dir)
             args.load = ''
 
-        os.makedirs(self.dir, exist_ok=True)
-        os.makedirs(self.get_path('model'), exist_ok=True)
+        # os.makedirs(self.dir, exist_ok=True)
+        # os.makedirs(self.get_path('model'), exist_ok=True)
         # for d in args.data_test:
         #     os.makedirs(self.get_path('results-{}'.format(d)), exist_ok=True)
 

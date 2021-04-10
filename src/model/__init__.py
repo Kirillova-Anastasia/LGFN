@@ -85,7 +85,7 @@ class Model(nn.Module):
             if pre_train == 'download':
                 print('Download the model')
                 dir_model = os.path.join('..', 'models')
-                os.makedirs(dir_model, exist_ok=True)
+                # os.makedirs(dir_model, exist_ok=True)
                 load_from = torch.utils.model_zoo.load_url(
                     self.model.url,
                     model_dir=dir_model,
