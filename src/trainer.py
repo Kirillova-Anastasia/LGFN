@@ -81,9 +81,7 @@ class Trainer():
         self.ckp.add_log(
             torch.zeros(1, len(self.loader_test), len(self.scale))
         )
-        print("before model.eval()")
         self.model.eval()
-        print("after model.eval()")
 
         timer_test = utility.timer()
         if self.args.save_results: self.ckp.begin_background()
@@ -102,13 +100,10 @@ class Trainer():
                         sr, hr, scale, self.args.rgb_range, dataset=d
                     )
                     '''
-                    print("before extend save list")
                     if self.args.save_gt:
                         save_list.extend([lr, hr])
-                    print("before saving result")
                     if self.args.save_results:
                         self.ckp.save_results(d, filename[0], save_list)
-                    print("after saving result")
 
                 '''
                 self.ckp.log[-1, idx_data, idx_scale] /= len(d)

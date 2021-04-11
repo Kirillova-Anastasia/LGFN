@@ -161,7 +161,6 @@ class checkpoint():
             # if not os.path.exists(save_dir):
             #     os.mkdir(save_dir)
             filename = self.get_path(save_dir, '{}'.format(filename))
-            print(filename)
 
             postfix = ('SR', 'LR', 'HR')
             for v, p in zip(save_list, postfix):

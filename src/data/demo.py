@@ -23,7 +23,7 @@ class Demo(data.Dataset):
         self.filelist.sort()
 
         self.filelist_GT = []
-        for f in os.listdir(args.dir_demo_GT):
+        for f in os.listdir(args.dir_demo):
             if f.find('.png') >= 0 or f.find('.bmp') >= 0:
                 self.filelist_GT.append(os.path.join(args.dir_demo_GT, f))
         self.filelist_GT.sort()
