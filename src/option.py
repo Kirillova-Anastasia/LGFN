@@ -25,6 +25,8 @@ parser.add_argument('--dir_demo', type=str, default='/Video/vid4/bicubic_LR/walk
                     help='demo dataset directory')
 parser.add_argument('--dir_demo_GT', type=str, default='/Video/vid4/HR/walk',
                     help='demo dataset directory')
+parser.add_argument('--video_name', type=str, default='',
+                    help='')
 
 parser.add_argument('--data_train', type=str, default='Vimeo',
                     help='train dataset name')
