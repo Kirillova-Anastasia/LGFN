@@ -53,9 +53,9 @@ if __name__ == '__main__':
     args.save_dir = os.path.join(args.save_dir, 'LGFN')
     if not os.path.exists(args.save_dir):
         os.mkdir(args.save_dir)
-        args.save_dir = os.path.join(args.save_dir, args.video_name)
-        if not os.path.exists(args.save_dir):
-            os.mkdir(args.save_dir)
+    args.save_dir = os.path.join(args.save_dir, args.video_name)
+    if not os.path.exists(args.save_dir):
+        os.mkdir(args.save_dir)
 
     with open(os.path.join(time_write_dir , 'LGFN.txt'), 'a') as f:
         f.write('OK ' + args.video_name + '\n')
