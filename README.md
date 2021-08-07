@@ -1,3 +1,7 @@
+# Running on your own dataset
+1) We used `pytorch/pytorch:1.0.1-cuda10.0-cudnn7-devel` docker. Directory with input images is mounted as `/dataset`, results will be saved in `/output`, directory with code is mounted as `/LGFN`. You should set  `--shm-size 8G` parameter.
+2) Enter directory `/LGFN`. See `LGFN.sh` script for installation commands and running example.
+
 # Local-Global Fusion Network for Video Super-Resolution
 
 This repository is about Local-Global Fusioin Network for Video Super-Resolution (LGFN).
